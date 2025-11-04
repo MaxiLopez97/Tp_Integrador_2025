@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bodegón López Lusara</title>
   <link rel="stylesheet" href="./Css/style.css">
+
 </head>
 
 <body>
@@ -21,19 +22,17 @@
   </header>
 
   <main>
-   <!-- Carrusel -->
-<div class="carousel">
-  <button id="prev" class="carousel-btn">⟨</button>
+  <!-- Carrusel -->
+  <div class="carousel">
+    <button id="prev" class="carousel-btn" aria-label="Anterior">⟨</button>
 
-  <div class="carousel-track">
-    <img class="carousel-img" src="./img/carousel/carousel_img1.jpeg" alt="Barra">
-    <img class="carousel-img" src="./img/carousel/img1.jpeg" alt="Mesas">
-    <img class="carousel-img" src="./img/carousel/img2.png" alt="Interior">
-    <img class="carousel-img" src="./img/carousel/img3.png" alt="Mesas interior">
+    <div class="carousel-track">
+      <!-- Una sola imagen visible (el JS cambiará su src) -->
+      <img id="carousel-image" class="carousel-img" src="./img/carousel/carousel_img1.jpeg" alt="Imagen carrusel">
+    </div>
+
+    <button id="next" class="carousel-btn" aria-label="Siguiente">⟩</button>
   </div>
-
-  <button id="next" class="carousel-btn">⟩</button>
-</div>
 
     <!-- Intro -->
     <div class="intro">
@@ -74,10 +73,12 @@
 
 
 
+  <script src="./Js/carousel.js"></script>
 
   <footer>
     <p>© 2025 Bodegón López Lusara | Todos los derechos reservados</p>
   </footer>
+
 </body>
 
 </html>
