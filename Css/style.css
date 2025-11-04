@@ -318,4 +318,28 @@ footer {
     font-size: 1.5rem;
     padding: 6px 12px;
   }
+
+  #errores p {
+  background: #ffecec;
+  border-left: 4px solid #ff4d4d;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.resultado-datos {
+  background: #e6ffe6;
+  border-left: 4px solid #00b300;
+  padding: 15px;
+  border-radius: 6px;
+  transition: opacity 0.4s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 }
