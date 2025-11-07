@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Array de imagenes
   const imagenes = [
-    "./img/carousel/carousel_img1.jpeg",
-    "./img/carousel/img1.jpeg",
-    "./img/carousel/img2.png",
-    "./img/carousel/img3.png"
+    "../Img/carousel_img1.jpeg",
+    "../img/carousel_img2.jpeg",
+    "../Img/carousel_img3.png",
+    "../Img/carousel_img4.png"
   ];
 
   
