@@ -13,69 +13,71 @@
       <ul class="nav-links">
         <li><a href="../../index.html">Inicio</a></li>
         <li><a href="../../Html/Page1/menu.html">Menú</a></li>
-        <li><a href="../../Html/Page2/nosotros.html">Nosotros</a></li>
+        <li><a href="../../Html/Page2/nosotros.html" class="active">Nosotros</a></li>
       </ul>
     </nav>
   </header>
 
-<div id="contactoBajo" class="contacto">
+  <main class="contacto-container">
 
-  <!-- IZQUIERDA: HORARIOS -->
-  <div class="col-izquierda">
-    <h2>HORARIOS</h2>
-    <ul style="list-style-type: none; padding: 0;">
-      <li>Lunes: 8:00 a 23:30</li>
-      <li>Martes: 8:00 a 23:30</li>
-      <li>Miércoles: 8:00 a 23:30</li>
-      <li>Jueves: 8:00 a 23:30</li>
-      <li>Viernes: 10:00 a 23:30</li>
-      <li>Sábado: 10:00 a 23:30</li>
-      <li>Domingo: 11:00 a 23:30</li>
-    </ul>
+    <!-- Columna izquierda -->
+    <section class="col-izquierda">
+      <h2>HORARIOS</h2>
+      <ul>
+        <li>Lunes: 8:00 a 23:30</li>
+        <li>Martes: 8:00 a 23:30</li>
+        <li>Miércoles: 8:00 a 23:30</li>
+        <li>Jueves: 8:00 a 23:30</li>
+        <li>Viernes: 10:00 a 23:30</li>
+        <li>Sábado: 10:00 a 23:30</li>
+        <li>Domingo: 11:00 a 23:30</li>
+      </ul>
 
-    <h2>RESERVA TU MESA</h2>
-    <ul style="list-style-type: none; padding: 0;">
-      <li><strong>2657773311</strong></li>
-      <li><strong>2664713877</strong></li>
-    </ul>
-  </div>
+      <h2>RESERVA TU MESA</h2>
+      <div class="telefonos">
+        <p>📞 <strong>2657773311</strong></p>
+        <p>📞 <strong>2664713877</strong></p>
+      </div>
+    </section>
 
-  <!-- DERECHA: FORMULARIO -->
-  <div class="col-derecha">
-    <h2>Deja un comentario</h2>
-    <form id="formulario-contacto">
-      <label>Nombre:</label>
-      <input type="text" id="nombre" required maxlength="50">
+    <!-- Columna derecha -->
+    <section class="col-derecha">
+      <h2>Deja un comentario</h2>
+      <form id="formulario-contacto">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required maxlength="50">
 
-      <label>Email:</label>
-      <input type="email" id="email" required pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
+        <label for="email">Email</label>
+        <input type="email" id="email" required pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
 
-      <label>Teléfono:</label>
-      <input type="tel" id="telefono" required pattern="^[0-9]{10}$" maxlength="10" placeholder="Ej: 1123456789">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" required pattern="^[0-9]{10}$" maxlength="10" placeholder="Ej: 1123456789">
 
-      <label>Mensaje:</label>
-      <textarea id="mensaje" maxlength="300"></textarea>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" maxlength="300" rows="4"></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="errores"></div>
-    <div id="resultado"></div>
-  </div>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="errores"></div>
+      <div id="resultado"></div>
+    </section>
 
-  <!-- ABAJO: MAPA -->
-  <div class="mapa">
-    <h2>Ubicación</h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.896824822412!2d-65.46978152465906!3d-33.68573565056642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d16a9aca525613%3A0x1541182218ac0f9c!2sLavalle%20%26%20Tucum%C3%A1n%2C%20D5732%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses!2sar!4v1760991019694!5m2!1ses!2sar"
-      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+    <!-- Mapa -->
+    <section class="mapa">
+      <h2>Ubicación</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.896824822412!2d-65.46978152465906!3d-33.68573565056642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d16a9aca525613%3A0x1541182218ac0f9c!2sLavalle%20%26%20Tucum%C3%A1n%2C%20D5732%20Villa%20Mercedes%2C%20San%20Luis!5e0!3m2!1ses!2sar!4v1760991019694!5m2!1ses!2sar"
+        width="600" height="450" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
 
-</div>
-  <script src="/Js/validacionesForm.js"></script>
+  </main>
 
   <footer>
     <p>© 2025 Bodegón López Lusara</p>
   </footer>
+
+  <script src="/Js/validacionesForm.js"></script>
 </body>
 </html>

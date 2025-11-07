@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Array con las rutas de las imágenes
+  // Array de imagenes
   const imagenes = [
     "./img/carousel/carousel_img1.jpeg",
     "./img/carousel/img1.jpeg",
@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "./img/carousel/img3.png"
   ];
 
-  // Selectores
+  
   const imgElemento = document.getElementById("carousel-image");
   const btnPrev = document.getElementById("prev");
   const btnNext = document.getElementById("next");
   const carrusel = document.querySelector(".carousel");
 
-  // Comprobaciones básicas
+  // Comprobaciones 
   if (!imgElemento) return console.error("Error: No se encontró #carousel-image en el DOM.");
   if (!btnPrev) return console.error("Error: No se encontró #prev en el DOM.");
   if (!btnNext) return console.error("Error: No se encontró #next en el DOM.");
@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let indiceActual = 0;
   let intervalo = null;
 
-  // Función para mostrar imagen con fade
+ 
   function mostrarImagen() {
     imgElemento.style.opacity = 0;
-    // corto delay para ver el fade-out
+    
     setTimeout(() => {
       imgElemento.src = imagenes[indiceActual];
       imgElemento.alt = `Imagen ${indiceActual + 1} de ${imagenes.length}`;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarImagen();
   }
 
-  // Eventos de click
+  
   btnNext.addEventListener("click", () => {
     siguienteImagen();
     reiniciarIntervalo();
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reiniciarIntervalo();
   });
 
-  // Autoavance cada 4s
+  
   function iniciarIntervalo() {
     if (intervalo) clearInterval(intervalo);
     intervalo = setInterval(siguienteImagen, 4000);
@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
     iniciarIntervalo();
   }
 
-  // Pausar/reanudar en hover (útil en desktop)
+  
   carrusel.addEventListener("mouseenter", () => clearInterval(intervalo));
   carrusel.addEventListener("mouseleave", () => iniciarIntervalo());
 
-  // Mostrar la primera imagen (por si src inicial no coincide)
+ 
   mostrarImagen();
   iniciarIntervalo();
 
-  // Mensaje de estado en consola (útil para debugging)
+  
   console.info("Carrusel inicializado. Imágenes:", imagenes.length);
 });

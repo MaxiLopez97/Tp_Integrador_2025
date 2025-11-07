@@ -1,6 +1,4 @@
-/* =====================
-   ESTILOS GENERALES
-===================== */
+/* Body*/
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -9,9 +7,7 @@ body {
   color: #3B3B3B;
 }
 
-/* =====================
-   ENCABEZADO Y NAVBAR
-===================== */
+/*Encabezado y barra navegacion*/
 header {
   background-color: #7A1F0F;
   color: white;
@@ -55,10 +51,7 @@ header {
   color: #7A1F0F;
 }
 
-/* =====================
-   CARRUSEL
-===================== */
-/* ==== CARRUSEL ==== */
+/* Carrusel*/
 .carousel {
   position: relative;
   width: 100%;
@@ -111,9 +104,7 @@ header {
   right: 15px;
 }
 
-/* =====================
-   INTRODUCCIÓN / CONTENIDO
-===================== */
+/*Contenido*/
 main, .contenido {
   max-width: 1200px;
   margin: 0 auto;
@@ -125,9 +116,7 @@ h2, h3 {
   color: #7A1F0F;
 }
 
-/* =====================
-   PLATOS DESTACADOS
-===================== */
+/*Platos destacados*/
 .destacados {
   display: flex;
   justify-content: center;
@@ -177,9 +166,7 @@ h2, h3 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* =====================
-   MENÚ (Página 1)
-===================== */
+/* Menu(Pagina 1)*/
 .menu-flex {
   display: flex;
   justify-content: center;
@@ -226,57 +213,46 @@ h2, h3 {
   font-weight: 500;
 }
 
-/* =====================
-   CONTACTO
-===================== */
-.contacto {
+/*Contacto (Pagina 3)*/
+.contacto-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
   padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
   background-color: #FFF0D6;
   border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .col-izquierda, .col-derecha {
   flex: 1 1 45%;
-  background-color: white;
+  background-color: #fff;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+.col-izquierda h2, .col-derecha h2, .mapa h2 {
+  color: #7A1F0F;
+  border-bottom: 2px solid #7A1F0F30;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
 }
 
-input, textarea {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 14px;
+.col-izquierda ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
 }
 
-button {
-  background-color: #7A1F0F;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
+.telefonos p {
+  margin: 8px 0;
   font-weight: bold;
-  transition: background-color 0.3s;
 }
-
-button:hover {
-  background-color: #A8321E;
-}
-
-/* Mapa */
+/*Mapa*/
 .mapa {
   width: 100%;
   text-align: center;
@@ -290,9 +266,50 @@ button:hover {
   border-radius: 12px;
 }
 
-/* =====================
-   FOOTER
-===================== */
+/*Formulario*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: 600;
+  color: #7A1F0F;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #7A1F0F;
+  outline: none;
+}
+
+button {
+  background-color: #7A1F0F;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a0321e;
+}
+
+
+/*Footer*/
 footer {
   background-color: #7A1F0F;
   color: white;
@@ -302,9 +319,7 @@ footer {
   font-size: 14px;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
+/*Responsive*/
 @media (max-width: 768px) {
   .carousel {
     max-width: 95%;
@@ -336,10 +351,7 @@ footer {
   animation: fadeIn 0.4s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+
 
 
 }
