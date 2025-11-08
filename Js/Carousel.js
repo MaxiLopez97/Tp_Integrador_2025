@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Rutas CORRECTAS desde Html/Page1/menu.html -> subir 2 niveles hasta la raíz, luego Img/...
   const imagenes = [
-    "../../Img/carousel_img1.jpeg",
-    "../../Img/carousel_img2.jpeg",
-    "../../Img/carousel_img3.png",
-    "../../Img/carousel_img4.png"
+    "../Img/carousel_img1.jpeg",
+    "../Img/carousel_img2.jpeg",
+    "../Img/carousel_img3.png",
+    "../Img/carousel_img4.png"
   ];
 
   const imgElemento = document.getElementById("carousel-image");
