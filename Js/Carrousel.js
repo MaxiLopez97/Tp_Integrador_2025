@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   
   const imagenes = [
-    "../Img/carrousel_img1.jpeg",
-    "../Img/carrousel_img2.jpeg",
-    "../Img/carrousel_img3.png",
-    "../Img/carrousel_img4.png"
-  ];
+  "../../Img/carrousel_img1.jpeg",
+  "../../Img/carrousel_img2.jpeg",
+  "../../Img/carrousel_img3.png",
+  "../../Img/carrousel_img4.png"
+];
+
 
   const imgElemento = document.getElementById("carousel-image");
   const btnPrev = document.getElementById("prev");
