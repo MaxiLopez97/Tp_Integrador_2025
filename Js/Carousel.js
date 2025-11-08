@@ -1,32 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Array de imagenes
+  // Rutas CORRECTAS desde Html/Page1/menu.html -> subir 2 niveles hasta la raíz, luego Img/...
   const imagenes = [
-    "../Img/carousel_img1.jpeg",
-    "../img/carousel_img2.jpeg",
-    "../Img/carousel_img3.png",
-    "../Img/carousel_img4.png"
+    "../../Img/carousel_img1.jpeg",
+    "../../Img/carousel_img2.jpeg",
+    "../../Img/carousel_img3.png",
+    "../../Img/carousel_img4.png"
   ];
 
-  
   const imgElemento = document.getElementById("carousel-image");
   const btnPrev = document.getElementById("prev");
   const btnNext = document.getElementById("next");
   const carrusel = document.querySelector(".carousel");
 
-  // Comprobaciones 
   if (!imgElemento) return console.error("Error: No se encontró #carousel-image en el DOM.");
   if (!btnPrev) return console.error("Error: No se encontró #prev en el DOM.");
   if (!btnNext) return console.error("Error: No se encontró #next en el DOM.");
   if (!carrusel) return console.error("Error: No se encontró el contenedor .carousel en el DOM.");
   if (!Array.isArray(imagenes) || imagenes.length === 0) return console.error("Error: El array 'imagenes' está vacío o no es un array.");
 
+  // Verifica que las imágenes existan (hace una peticion HEAD para debug; fallos comunes: 404)
+  imagenes.forEach((ruta, i) => {
+    fetch(ruta, { method: 'HEAD' })
+      .then(res => {
+        if (!res.ok) console.warn(`Imagen ${i} -> ${ruta} devolvió ${res.status}`);
+      })
+      .catch(err => console.warn(`Error comprobando imagen ${ruta}:`, err));
+  });
+
   let indiceActual = 0;
   let intervalo = null;
 
- 
   function mostrarImagen() {
+    imgElemento.style.transition = "opacity .18s ease";
     imgElemento.style.opacity = 0;
-    
+
     setTimeout(() => {
       imgElemento.src = imagenes[indiceActual];
       imgElemento.alt = `Imagen ${indiceActual + 1} de ${imagenes.length}`;
@@ -44,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarImagen();
   }
 
-  
   btnNext.addEventListener("click", () => {
     siguienteImagen();
     reiniciarIntervalo();
@@ -55,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reiniciarIntervalo();
   });
 
-  
   function iniciarIntervalo() {
     if (intervalo) clearInterval(intervalo);
     intervalo = setInterval(siguienteImagen, 4000);
@@ -66,14 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
     iniciarIntervalo();
   }
 
-  
   carrusel.addEventListener("mouseenter", () => clearInterval(intervalo));
   carrusel.addEventListener("mouseleave", () => iniciarIntervalo());
 
- 
   mostrarImagen();
   iniciarIntervalo();
 
-  
   console.info("Carrusel inicializado. Imágenes:", imagenes.length);
 });
