@@ -12,12 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnNext = document.getElementById("next");
   const carrusel = document.querySelector(".carousel");
 
-  if (!imgElemento) return console.error("Error: No se encontró #carousel-image en el DOM.");
-  if (!btnPrev) return console.error("Error: No se encontró #prev en el DOM.");
-  if (!btnNext) return console.error("Error: No se encontró #next en el DOM.");
-  if (!carrusel) return console.error("Error: No se encontró el contenedor .carousel en el DOM.");
-  if (!Array.isArray(imagenes) || imagenes.length === 0) return console.error("Error: El array 'imagenes' está vacío o no es un array.");
-
+ 
   
   imagenes.forEach((ruta, i) => {
     fetch(ruta, { method: 'HEAD' })
