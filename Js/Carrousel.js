@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Rutas CORRECTAS desde Html/Page1/menu.html -> subir 2 niveles hasta la raíz, luego Img/...
+  
   const imagenes = [
     "../Img/carrousel_img1.jpeg",
-    "../Img/carousel_img2.jpeg",
-    "../Img/carousel_img3.png",
-    "../Img/carousel_img4.png"
+    "../Img/carrousel_img2.jpeg",
+    "../Img/carrousel_img3.png",
+    "../Img/carrousel_img4.png"
   ];
 
   const imgElemento = document.getElementById("carousel-image");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!carrusel) return console.error("Error: No se encontró el contenedor .carousel en el DOM.");
   if (!Array.isArray(imagenes) || imagenes.length === 0) return console.error("Error: El array 'imagenes' está vacío o no es un array.");
 
-  // Verifica que las imágenes existan (hace una peticion HEAD para debug; fallos comunes: 404)
+  
   imagenes.forEach((ruta, i) => {
     fetch(ruta, { method: 'HEAD' })
       .then(res => {
