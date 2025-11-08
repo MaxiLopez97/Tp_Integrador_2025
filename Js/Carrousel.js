@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const imagenes = [
   "../../Tp_Integrador_2025/Img/carrousel_img1.jpeg",
-  "/Img/carrousel_img2.jpeg",
-  "/Img/carrousel_img3.png",
-  "/Img/carrousel_img4.png"
+  "../../Tp_Integrador_2025/Img/carrousel_img2.jpeg",
+  "../../Tp_Integrador_2025/Img/carrousel_img3.png",
+  "../../Tp_Integrador_2025/Img/carrousel_img4.png"
 ];
 
 
